@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 //wildcard route --> has to be below all routes or it will override other pages
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Page</h1>')
+    res.render('error404')
 })
 
 app.listen(process.env.PORT)
