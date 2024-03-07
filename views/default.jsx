@@ -13,7 +13,12 @@ function Def(html) {
         />
         <link rel="stylesheet" href="/css/style.css" />
       </head>
-      <body>{html.children}</body>
+      <body>
+        <div>{html.children}</div>
+        <footer className="footer">
+            <p>This site was created by Courtney Rudd. To see more of her work checkout: <a href="https://github.com/crudd12">CRUDD GitHub</a></p>
+        </footer>
+      </body>
     </html>
   );
 }
