@@ -19,4 +19,13 @@ router.get('/', (req, res) => {
     res.render('places/index', { places })
 })
 
+// exact matching routes (i.e.,not using variables) need to come before routes with variables
+router.get('/new', (req, res) => {
+    res.render('places/new')
+})
+
+router.get('/:id', (req, res) => {
+    // res.render('')
+})
+
 module.exports = router 
