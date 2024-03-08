@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const places = require('../models/places.js')
 
+
+// GET
 router.get('/', (req, res) => {
     res.render('places/index', { places })
 })
@@ -19,10 +21,16 @@ router.get('/:id', (req, res) => {
         res.render('error404')
     }
     else {
-        res.render('places/show', { place: places[id] })    
+        res.render('places/show', { place: places[id], id })
     }
 })
 
+router.get('/:id/edit', (req, res) => {
+    // let id = Number(req.params.id)
+    res.render('places/edit')
+})
+
+// CREATE
 router.post('/', (req, res) => {
     if (!req.body.pic) {
         // default image if one is not provided
@@ -37,6 +45,11 @@ router.post('/', (req, res) => {
     places.push(req.body)
     // redirects to the index route to see newly added place
     res.redirect('/places')
+})
+
+// DELETE
+router.delete('/:id', (req, res) => {
+    res.send('delete stub route')
 })
 
 module.exports = router 

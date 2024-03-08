@@ -36,7 +36,7 @@ nav a:hover {
 }
 
 body {
-  background-color: #d8b9aa;
+  background-color: rgb(233, 233, 233);
   text-align: center;
 }
 
@@ -47,7 +47,8 @@ main {
 }
 
 /* used for sticky footer */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -71,6 +72,6 @@ footer > p {
   padding-top: 12px;
 }
 footer > p > a {
-  color:white;
+  color: white;
 }
 /* end of sticky footer formatting */
