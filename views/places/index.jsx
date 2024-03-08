@@ -1,10 +1,10 @@
 const React = require("react");
 const Def = require("../default");
 
-function index(data) {
-  let placesFormatted = data.places.map((place) => {
+function index({ places }) {
+  let placesFormatted = places.map((place, i) => {
     return (
-      <div className="col-sm-6">
+      <div className="col-sm-6" key={i}>
         <h2 className="text-center">{place.name}</h2>
         <p className="text-center">{place.cuisines}</p>
         <img src={place.pic} className="rounded mx-auto d-block" alt={place.name} width="50%"></img>
