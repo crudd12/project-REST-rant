@@ -1,7 +1,7 @@
 const React = require("react");
 const Def = require("../default");
 
-function Show({ place, i }) {
+function Show({ place, id }) {
   return (
     <Def>
       <main>
@@ -23,10 +23,10 @@ function Show({ place, i }) {
             <h5 className="card-title">Rating</h5>
             <p>Not Rated</p>
             <h5 className="card-title">Restaurant Description</h5>
-            <a href={`/places/${i}/edit`} className="btn btn-warning">
+            <a href={`/places/${id}/edit`} className="btn btn-warning">
               Edit
             </a>
-            <form method="POST" action={`/places/${i}?_method=DELETE`}>
+            <form method="POST" action={`/places/${id}?_method=DELETE`}>
               <button type="submit" className="btn btn-danger">
                 Delete
               </button>
@@ -38,7 +38,7 @@ function Show({ place, i }) {
               <li>{place.cuisines}</li>
               <li>
                 Located in {place.city}, {place.state}
-              </li>
+              </li>  
             </ul>
           </div>
         </div>

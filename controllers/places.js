@@ -25,10 +25,6 @@ router.get('/:id', (req, res) => {
     }
 })
 
-router.get('/:id/edit', (req, res) => {
-    // let id = Number(req.params.id)
-    res.render('places/edit')
-})
 
 // CREATE
 router.post('/', (req, res) => {
@@ -49,7 +45,18 @@ router.post('/', (req, res) => {
 
 // DELETE
 router.delete('/:id', (req, res) => {
-    res.send('delete stub route')
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    }
+    else if (!places[id]) {
+        res.render('error404')
+    }
+    else {
+        places.splice(id, 1)
+        res.redirect('/places')
+    }
 })
+
 
 module.exports = router 
