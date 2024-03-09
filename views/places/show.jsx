@@ -23,14 +23,6 @@ function Show({ place, id }) {
             <h5 className="card-title">Rating</h5>
             <p>Not Rated</p>
             <h5 className="card-title">Restaurant Description</h5>
-            <a href={`/places/${id}/edit`} className="btn btn-warning">
-              Edit
-            </a>
-            <form method="POST" action={`/places/${id}?_method=DELETE`}>
-              <button type="submit" className="btn btn-danger">
-                Delete
-              </button>
-            </form>
             <ul
               className="card-text"
               style={{ listStyleType: "none", marginRight: "30px" }}
@@ -38,8 +30,18 @@ function Show({ place, id }) {
               <li>{place.cuisines}</li>
               <li>
                 Located in {place.city}, {place.state}
-              </li>  
+              </li>
             </ul>
+            <div className="edit_delete">
+              <a href={`/places/${id}/edit`} className="btn btn-primary">
+                Edit
+              </a>
+              <form method="POST" action={`/places/${id}?_method=DELETE`}>
+                <button type="submit" className="btn btn-danger">
+                  Delete
+                </button>
+              </form>
+            </div>
           </div>
         </div>
         <div

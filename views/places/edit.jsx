@@ -1,12 +1,12 @@
 const React = require("react");
 const Def = require("../default.jsx");
 
-function Edit_Form({ place }) {
+function Edit_Form({ place, id }) {
   return (
     <Def>
       <main>
         <h1>Edit Place</h1>
-        <form action={`/places/${place.id}?_method=PUT`} method="POST">
+        <form action={`/places/${id}?_method=PUT`} method="POST">
           <div className="row">
             <div className="form-group col-sm-6">
               <label htmlFor="name">Place Name</label>
@@ -64,11 +64,7 @@ function Edit_Form({ place }) {
             />
           </div>
           <div>
-            <input
-              className="btn btn-primary"
-              type="submit"
-              value="Add New Place"
-            />
+            <input className="btn btn-primary" type="submit" value="Update" /> 
           </div>
         </form>
       </main>
@@ -76,4 +72,4 @@ function Edit_Form({ place }) {
   );
 }
 
-module.exports = Edit_Form;
+module.exports = Edit_Form; 

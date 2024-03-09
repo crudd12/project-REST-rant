@@ -46,6 +46,11 @@ main {
   background-color: white;
 }
 
+.edit_delete {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 /* used for sticky footer */
 html,
 body {
