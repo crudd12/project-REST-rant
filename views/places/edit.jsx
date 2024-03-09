@@ -64,7 +64,7 @@ function Edit_Form({ place, id }) {
             />
           </div>
           <div>
-            <input className="btn btn-primary" type="submit" value="Update" /> 
+            <input className="btn btn-primary" type="submit" value="Update" />
           </div>
         </form>
       </main>
@@ -72,4 +72,4 @@ function Edit_Form({ place, id }) {
   );
 }
 
-module.exports = Edit_Form; 
+module.exports = Edit_Form;
