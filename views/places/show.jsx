@@ -87,4 +87,4 @@ function Show({ place, id }) {
   );
 }
 
-module.exports = Show;
+module.exports = Show; 
