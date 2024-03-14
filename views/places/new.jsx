@@ -9,7 +9,13 @@ function New_Form() {
         <form action="/places" method="POST">
           <div className="form-group">
             <label htmlFor="name">Place Name</label>
-            <input className="form-control" type="text" id="name" name="name" required />
+            <input
+              className="form-control"
+              type="text"
+              id="name"
+              name="name"
+              required
+            />
           </div>
           <div className="form-group">
             <label htmlFor="pic">Place Picture</label>
@@ -21,14 +27,33 @@ function New_Form() {
           </div>
           <div className="form-group">
             <label htmlFor="state">Place State</label>
-            <input className="form-control" type="text" id="state" name="state" />
+            <input
+              className="form-control"
+              type="text"
+              id="state"
+              name="state"
+            />
           </div>
           <div className="form-group">
             <label htmlFor="cuisines">Place Cuisines</label>
-            <input className="form-control" type="text" id="cuisines" name="cuisines" required />
+            <input
+              className="form-control"
+              type="text"
+              id="cuisines"
+              name="cuisines"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="founded">Founded Year</label>
+            <input className="form-control" id="founded" name="founded" />
           </div>
           <div>
-            <input className="btn btn-primary" type='submit' value='Add New Place' />
+            <input
+              className="btn btn-primary"
+              type="submit"
+              value="Add New Place"
+            />
           </div>
         </form>
       </main>

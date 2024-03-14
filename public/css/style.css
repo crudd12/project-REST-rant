@@ -31,19 +31,19 @@ nav a {
 }
 
 nav a:hover {
-  color: pink;
+  color: #eeb78e;
   text-decoration: none;
 }
 
 body {
-  background-color: rgb(233, 233, 233);
+  background-color: cornflowerblue;
   text-align: center;
 }
 
 main {
   margin-right: 20px;
   margin-left: 20px;
-  background-color: white;
+  background-color: #e9f1f7;
 }
 
 .edit_delete {
