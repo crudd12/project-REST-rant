@@ -26,10 +26,13 @@ function Def(html) {
               <a href="/places/new">Add Place</a>
             </li>
           </ul>
-        </nav> 
+        </nav>
         <div>{html.children}</div>
         <footer className="footer">
-            <p>This site was created by Courtney Rudd. To see more of her work checkout: <a href="https://github.com/crudd12">CRUDD GitHub</a></p>
+          <p>
+            This site was created by Courtney Rudd. To see more of her work
+            checkout: <a href="https://github.com/crudd12">CRUDD GitHub</a>
+          </p>
         </footer>
       </body>
     </html>

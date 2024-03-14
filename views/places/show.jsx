@@ -1,7 +1,7 @@
 const React = require("react");
 const Def = require("../default");
 
-function Show({ place, id }) {
+function Show({ place }) {
   return (
     <Def>
       <main>
@@ -33,7 +33,7 @@ function Show({ place, id }) {
               </li>
             </ul>
             <div className="edit_delete">
-              <a href={`/places/${id}/edit`} className="btn btn-primary">
+              <a href={`/places/${place.id}/edit`} className="btn btn-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -50,7 +50,7 @@ function Show({ place, id }) {
                 </svg>
                 Edit
               </a>
-              <form method="POST" action={`/places/${id}?_method=DELETE`}>
+              <form method="POST" action={`/places/${place.id}?_method=DELETE`}>
                 <button type="submit" className="btn btn-danger">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -87,4 +87,4 @@ function Show({ place, id }) {
   );
 }
 
-module.exports = Show; 
+module.exports = Show;
