@@ -1,12 +1,12 @@
 const React = require("react");
 const Def = require("../default.jsx");
 
-function Edit_Form({ place, id }) {
+function Edit_Form({ place }) {
   return (
     <Def>
       <main>
         <h1>Edit Place</h1>
-        <form action={`/places/${id}?_method=PUT`} method="POST">
+        <form action={`/places/${place.id}?_method=PUT`} method="POST">
           <div className="row">
             <div className="form-group col-sm-6">
               <label htmlFor="name">Place Name</label>

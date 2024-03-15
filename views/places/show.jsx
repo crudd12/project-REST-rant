@@ -6,9 +6,6 @@ function Show({ place }) {
     <Def>
       <main>
         <h1>{place.name}</h1>
-        <h5>
-          Located in {place.city}, {place.state}
-        </h5>
         <div
           className="card"
           style={{
@@ -23,6 +20,10 @@ function Show({ place }) {
             alt={`${place.name} Picture`}
           ></img>
           <div className="card-body">
+            <h5>
+              Located in {place.city}, {place.state}
+            </h5>
+            <br />
             <h5 className="card-title">Rating</h5>
             <p>Not Rated</p>
             <h5 className="card-title">Restaurant Description</h5>

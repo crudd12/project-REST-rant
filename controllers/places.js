@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const db = require('../models')
 
-
+// retrieves all places
 router.get('/', (req, res) => {
     db.Place.find()
         .then((places) => {
@@ -13,21 +13,33 @@ router.get('/', (req, res) => {
         })
 })
 
+// posts a new place
 router.post('/', (req, res) => {
     db.Place.create(req.body)
         .then(() => {
             res.redirect('/places')
         })
         .catch(error => {
-            console.log('error:', error)
-            res.render('error404')
+            if (error && error.name == 'ValidationError') {
+                let message = 'Validation Error: '
+                for (var field in error.errors) {
+                    message += `${field} was ${error.errors[field].value}. `
+                    message += `${error.errors[field].message}`
+                }
+                res.render('places/new', { message })
+            }
+            else {
+                res.render('error404')
+            }
         })
 })
 
+// new place form
 router.get('/new', (req, res) => {
     res.render('places/new')
 })
 
+// place show page
 router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id)
         .then(place => {
@@ -39,16 +51,40 @@ router.get('/:id', (req, res) => {
         })
 })
 
+// update existing place
 router.put('/:id', (req, res) => {
-    res.send('PUT /places/:id stub')
+    db.Place.findByIdAndUpdate(req.params.id, req.body)
+        .then(() => {
+            res.redirect(`/places/${req.params.id}`)
+        })
+        .catch(error => {
+            console.log('error:', error)
+            res.render('error404')
+        })
 })
 
+// delete place
 router.delete('/:id', (req, res) => {
-    res.send('DELETE /places/:id stub')
+    db.Place.findByIdAndDelete(req.params.id)
+        .then(() => {
+            res.redirect('/places')
+        })
+        .catch(error => {
+            console.log('error:', error)
+            res.render('error404')
+        })
 })
 
+// edit place page
 router.get('/:id/edit', (req, res) => {
-    res.send('GET edit form stub')
+    db.Place.findById(req.params.id)
+        .then(place => {
+            res.render('places/edit', { place })
+        })
+        .catch(error => {
+            console.log('error:', error)
+            res.render('error404')
+        })
 })
 
 router.post('/:id/rant', (req, res) => {
