@@ -36,7 +36,7 @@ nav a:hover {
 }
 
 body {
-  background-color: cornflowerblue;
+  background-color: white;
   text-align: center;
 }
 
@@ -57,6 +57,7 @@ body {
   height: 100%;
   margin: 0;
 }
+
 .wrapper {
   min-height: 100%;
 
@@ -64,6 +65,7 @@ body {
   /* But also accounting for potential margin-bottom of last child */
   margin-bottom: -50px;
 }
+
 .footer,
 .push {
   height: 50px;
@@ -73,10 +75,13 @@ body {
   margin-right: 20px;
   margin-left: 20px;
 }
-footer > p {
+
+footer>p {
   padding-top: 12px;
 }
-footer > p > a {
+
+footer>p>a {
   color: white;
 }
+
 /* end of sticky footer formatting */

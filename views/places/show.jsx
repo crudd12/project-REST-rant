@@ -6,6 +6,9 @@ function Show({ place }) {
     <Def>
       <main>
         <h1>{place.name}</h1>
+        <h5>
+          Located in {place.city}, {place.state}
+        </h5>
         <div
           className="card"
           style={{
@@ -23,14 +26,12 @@ function Show({ place }) {
             <h5 className="card-title">Rating</h5>
             <p>Not Rated</p>
             <h5 className="card-title">Restaurant Description</h5>
+            <h6>{place.showEstablished()}</h6>
             <ul
               className="card-text"
               style={{ listStyleType: "none", marginRight: "30px" }}
             >
               <li>{place.cuisines}</li>
-              <li>
-                Located in {place.city}, {place.state}
-              </li>
             </ul>
             <div className="edit_delete">
               <a href={`/places/${place.id}/edit`} className="btn btn-primary">

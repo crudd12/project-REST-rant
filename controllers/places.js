@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         })
         .catch(error => {
             console.log('error:', error)
-            res.render('error 404')
+            res.render('error404')
         })
 })
 
@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
         })
         .catch(error => {
             console.log('error:', error)
-            res.render('error 404')
+            res.render('error404')
         })
 })
 
@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
         })
         .catch(error => {
             console.log('error:', error)
-            res.render('error 404')
+            res.render('error404')
         })
 })
 
