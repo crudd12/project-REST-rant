@@ -2,6 +2,28 @@ const React = require("react");
 const Def = require("../default");
 
 function Show({ place }) {
+  let comments = (
+    <p className="inactive">
+      No comments yet!
+    </p>
+  )
+  if (place.comments.length) {
+    comments = place.comments.map(c => {
+      return (
+        <div className="border border-2 rounded" key={c.id} style={{
+          backgroundColor: '#e9f1f7',
+          textAlign: 'left',
+          padding: '10px 15px'
+        }}>
+          <h6><strong>{c.rant ? 'Rant!' : 'Rave!'}</strong></h6>
+          <p>{c.content}</p>
+          <h6>- {c.author}</h6>
+          <h6><strong>Rating: {c.stars}</strong></h6>
+        </div>
+      )
+    })
+  }
+
   return (
     <Def>
       <main>
@@ -81,7 +103,75 @@ function Show({ place }) {
         >
           <div className="card-body">
             <h5 className="card-title">Comments</h5>
-            <p>No comments yet!</p>
+            {comments}
+          </div>
+        </div>
+
+        <div
+          className="card"
+          style={{
+            width: "50rem",
+            margin: "0 auto",
+            marginTop: "15px",
+            backgroundColor: "#eeb78e",
+          }}
+        >
+          <div className="card-body">
+            <h5 className="card-title">Got Your Own Rant or Rave?</h5>
+            <form action={`/places/${place.id}/comment`} method="POST">
+              <div className="row">
+                <div className="form-group col-sm-6">
+                  <label htmlFor="author">Author</label>
+                  <input
+                    className="form-control"
+                    type="text"
+                    id="author"
+                    name="author"
+                  />
+                </div>
+                <div className="form-group col-sm-6">
+                  <label htmlFor="stars">Star Rating</label>
+                  <input
+                    className="form-control form-range"
+                    type="range"
+                    id="stars"
+                    name="stars"
+                    step={0.5}
+                    min={0}
+                    max={5}
+                    required
+                    style={{
+                      border: 'none'
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="form-group">
+                  <label htmlFor="content">Content</label>
+                  <textarea
+                    className="form-control"
+                    id="content"
+                    name="content"
+                  ></textarea>
+                </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="rant">Rant?</label>
+                <input
+                  className="form-control form-check-input mt-0"
+                  type="checkbox"
+                  id="rant"
+                  name="rant"
+                  style={{
+                    margin: '8px auto'
+                  }}
+                />
+              </div>
+              <div>
+                <input className="btn btn-primary" type="submit" value="Add Comment" />
+              </div>
+            </form>
           </div>
         </div>
       </main>
@@ -90,3 +180,5 @@ function Show({ place }) {
 }
 
 module.exports = Show;
+
+

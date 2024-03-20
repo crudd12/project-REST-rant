@@ -3,10 +3,6 @@ h1 {
   color: cornflowerblue;
 }
 
-p {
-  text-align: center;
-}
-
 nav {
   background-color: cornflowerblue;
   padding: 10px;
@@ -44,6 +40,10 @@ main {
   margin-right: 20px;
   margin-left: 20px;
   background-color: #e9f1f7;
+}
+
+label {
+  font-weight: 600;
 }
 
 .edit_delete {
