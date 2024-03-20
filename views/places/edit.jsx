@@ -52,16 +52,29 @@ function Edit_Form({ place }) {
               />
             </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="cuisines">Place Cuisines</label>
-            <input
-              className="form-control"
-              type="text"
-              id="cuisines"
-              name="cuisines"
-              defaultValue={place.cuisines}
-              required
-            />
+          <div className="row">
+            <div className="form-group col-sm-6">
+              <label htmlFor="cuisines">Place Cuisines</label>
+              <input
+                className="form-control"
+                type="text"
+                id="cuisines"
+                name="cuisines"
+                defaultValue={place.cuisines}
+                required
+              />
+            </div>
+            <div className="form-group col-sm-6">
+              <label htmlFor="founded">Founded</label>
+              <input
+                className="form-control"
+                type="number"
+                id="founded"
+                name="founded"
+                defaultValue={place.founded}
+                required
+              />
+            </div>
           </div>
           <div>
             <input className="btn btn-primary" type="submit" value="Update" />

@@ -20,7 +20,7 @@ function Show({ place }) {
     }, 0)
     let averageRating = Math.round(sumRatings / place.comments.length)
     let stars = ''
-    for (let i=0; i < averageRating; i++) {
+    for (let i = 0; i < averageRating; i++) {
       stars += '⭐️'
     }
     rating = (
@@ -39,6 +39,9 @@ function Show({ place }) {
           <p>{c.content}</p>
           <h6>- {c.author}</h6>
           <h6><strong>Rating: {c.stars}</strong></h6>
+          <form method='POST' action={`/places/${place.id}/comment/${c.id}?_method=DELETE`}>
+            <input type="submit" className="btn btn-danger" value='Delete Comment' />
+          </form>
         </div>
       )
     })
